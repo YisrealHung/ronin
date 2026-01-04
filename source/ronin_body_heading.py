@@ -380,7 +380,7 @@ def test(args, **kwargs):
 
     _device = torch.device(args.device if torch.cuda.is_available() else 'cpu')
     if _device.type == 'cpu':
-        checkpoint = torch.load(args.model_path, map_location=lambda storage, location: storage)
+        checkpoint = torch.load(args.model_path, map_location=lambda storage, location: storage, weights_only=False)
     else:
         checkpoint = torch.load(args.model_path, map_location={model_data['device']: args.device})
 
