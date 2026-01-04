@@ -235,7 +235,7 @@ def train(args, **kwargs):
 
     network = get_model(args, **kwargs).to(_device)
     optimizer = torch.optim.Adam(network.parameters(), args.lr)
-    scheduler = ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.6, verbose=True, eps=1e-12)
+    scheduler = ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.6, eps=1e-12)
     quiet_mode = kwargs.get('quiet', False)
     use_scheduler = kwargs.get('use_scheduler', False)
 
