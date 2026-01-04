@@ -94,8 +94,8 @@ class RandomHoriRotateSeq:
 
     @jit
     def __call__(self, feature, target):
-        a = np.random.random() * 2 * np.math.pi
-        # print("Rotating by {} degrees", a/np.math.pi * 180)
+        a = np.random.random() * 2 * math.pi
+        # print("Rotating by {} degrees", a/math.pi * 180)
         t = np.array([np.cos(a), 0, 0, np.sin(a)])
 
         for i in range(len(self.i_f) - 1):
